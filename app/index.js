@@ -3,7 +3,6 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
-
 var HubotBotGenerator = module.exports = function HubotBotGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
@@ -18,7 +17,7 @@ util.inherits(HubotBotGenerator, yeoman.generators.Base);
 
 HubotBotGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
-  var botName = _.slugify(appname);
+  var botName = this._.slugify(this.appname);
 
   var prompts = [
     {
