@@ -16,8 +16,11 @@ var HubotBotGenerator = module.exports = function HubotBotGenerator(args, option
 util.inherits(HubotBotGenerator, yeoman.generators.Base);
 
 HubotBotGenerator.prototype.askFor = function askFor() {
-  var cb = this.async();
-  var botName = this._.slugify(this.appname);
+  var cb = this.async(),
+    botName = this._.slugify(this.appname),
+    userName = this.user.git.username,
+    userEmail = this.user.git.email;
+
 
   var prompts = [
     {
@@ -29,12 +32,18 @@ HubotBotGenerator.prototype.askFor = function askFor() {
       name: 'botDescription',
       message: 'Description',
       default: 'A simple helpful robot for your Company'
+    },
+    {
+      name: 'botOwner',
+      message: 'Owner',
+      default: userName+' <'+userEmail+'>'
     }
   ];
 
   this.prompt(prompts, function (props) {
     this.botName = props.botName;
     this.botDescription = props.botDescription;
+    this.botOwner = props.botOwner;
 
     cb();
   }.bind(this));

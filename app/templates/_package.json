@@ -2,7 +2,7 @@
   "name": "<%= botName %>",
   "version": "0.0.0",
 
-  "author": "GitHub Inc.",
+  "author": "<%= botOwner %>",
 
   "keywords": [
     "github",
