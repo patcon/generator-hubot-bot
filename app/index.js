@@ -18,19 +18,24 @@ util.inherits(HubotBotGenerator, yeoman.generators.Base);
 
 HubotBotGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
+  var botName = _.slugify(appname);
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
-
-  var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
-  }];
+  var prompts = [
+    {
+      name: 'botName',
+      message: 'Bot name',
+      default: botName
+    },
+    {
+      name: 'botDescription',
+      message: 'Description',
+      default: 'A simple helpful robot for your Company'
+    }
+  ];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    this.botName = props.botName;
+    this.botDescription = props.botDescription;
 
     cb();
   }.bind(this));

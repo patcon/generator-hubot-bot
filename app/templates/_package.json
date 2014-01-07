@@ -1,5 +1,5 @@
 {
-  "name": "<%= appname %>",
+  "name": "<%= botName %>",
   "version": "0.0.0",
 
   "author": "GitHub Inc.",
@@ -11,7 +11,7 @@
     "bot"
   ],
 
-  "description": "A simple helpful robot for your Company",
+  "description": "<%= botDescription %>",
 
   "licenses": [{
     "type": "MIT",
