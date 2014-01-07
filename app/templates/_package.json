@@ -1,5 +1,5 @@
 {
-  "name": "hosted-hubot",
+  "name": "<%= appname %>",
   "version": "2.7.1",
 
   "author": "GitHub Inc.",
