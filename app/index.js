@@ -37,14 +37,15 @@ HubotBotGenerator.prototype.askFor = function askFor() {
 };
 
 HubotBotGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
+  this.mkdir('bin');
+  this.copy('bin/hubot', 'bin/hubot');
+  this.copy('bin/hubot.cmd', 'bin/hubot.cmd');
 
+  this.copy('Procfile', 'Procfile');
+  this.copy('README.md', 'README.md');
+  this.copy('external-scripts.json', 'external-scripts.json');
+  this.copy('hubot-scripts.json', 'hubot-scripts.json');
+
+  this.copy('gitignore', '.gitignore');
   this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
-};
-
-HubotBotGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
 };
