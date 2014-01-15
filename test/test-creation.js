@@ -22,12 +22,20 @@ describe('hubot-bot generator', function () {
     it('creates expected files', function (done) {
         var expected = [
             // add files you expect to exist here.
-            '.jshintrc',
-            '.editorconfig'
+            'bin/hubot',
+            'bin/hubot.cmd',
+            'Procfile',
+            'README.md',
+            'external-scripts.json',
+            'hubot-scripts.json',
+            '.gitignore',
+            'package.json'
         ];
 
         helpers.mockPrompt(this.app, {
-            'someOption': true
+            'botName': "botbotbot",
+            'botDescription': "Just a bot",
+            'botOwner': "Colonel Brownpantsmanship"
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function () {
