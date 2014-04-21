@@ -4,7 +4,7 @@ A [Yeoman](http://yeoman.io) generator for your new Hubot.
 
 
 ## Installation
-- `npm install -g generator-hubot-script`
+- `npm install -g generator-hubot-bot`
 
 ## Usage
 - `yo hubot-bot`
